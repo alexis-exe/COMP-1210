@@ -1,0 +1,114 @@
+   /**.
+*
+* Alexis Frison-1210-003
+* 9/16/19
+*/
+public class UserInfo
+{
+   /**.
+   * @param args Command-line not used.
+   */
+   
+   // instance variables
+   private String firstName;
+   private String lastName;
+   private String location;
+   private int age = 0;
+   private int status = 0;
+   private static final int OFFLINE = 0, ONLINE = 1;
+   
+  /**.
+  * @param firstNameIn Command-line agrs not used
+  * @param lastNameIn Command-line agrs not used
+  */
+   public UserInfo(String firstNameIn, String lastNameIn)
+   {
+      firstName = firstNameIn;
+      lastName = lastNameIn;
+      location = "Not specified";
+      age = 0;
+      status = OFFLINE;
+   }
+   
+  /**.
+  * @return args Command-line not used.
+  * 
+  * Method
+  */
+   public String toString()
+   {
+      String output = "Name: " + firstName + " "
+            + lastName + "\n";
+      output += "Location: " + location + "\n";
+      output += "Age: " + age + "\n";
+      output += "Status: ";
+      if (status == OFFLINE)
+      {
+         output += "Offline";
+      }
+      else
+      {
+         output += "Online";
+      }
+      return output;
+   }
+   
+  /**.
+  *
+  * @param locationIn Command-line not used.
+  */
+   public void setLocation(String locationIn)
+   {
+      location = locationIn;
+   }
+   
+ /**.
+  * 
+  * @param ageIn Command-line not used
+  * @return isSet Command-line not used
+  */
+   public boolean setAge(int ageIn)
+   {
+      boolean isSet = false;
+      if (ageIn > 0)
+      {
+         age = ageIn;
+         isSet = true;
+      }
+      return isSet;
+   }
+   
+  /**.
+  *
+  * @return args Command-line not used.
+  */
+   public int getAge()
+   {
+      return age;
+   }
+
+ /**.
+ * 
+ * @return args Command-line not used.
+ */
+   public String getLocation()
+   {
+      return location;
+   }
+   
+ /**.
+ *
+ */
+   public void logOff()
+   {
+      status = OFFLINE;
+   }
+   
+ /**.
+ * 
+ */
+   public void logOn()
+   {
+      status = ONLINE;
+   }
+}
