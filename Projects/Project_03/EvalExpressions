@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+/** This program will evaluate an expression.
+*
+* Alexis Frison-1210-003
+* 9/11/19
+*/
+public class EvalExpression
+{
+   /**
+   * @param args Commandline (not used).
+   */
+   public static void main(String[] args)
+   {
+      // Variables
+      Scanner userInput = new Scanner(System.in);
+      double x = 0;
+      double result = 0;
+      double math1 = 0;
+      double squareroot = 0;
+      double math2 = 0;
+      double discriminant;
+   
+      // Gets user input
+      System.out.print("Enter a value for x: ");
+      x = userInput.nextDouble();
+      
+      // The maths
+      discriminant = 12.4 * Math.pow(x, 6) - 1.2 * Math.pow(x, 3);
+      squareroot = Math.abs(2.6 * Math.pow(x, 5) - 6.8 * x + 7);
+      math1 = Math.sqrt(squareroot);
+      math2 = Math.pow(x, 4) + 9;
+      result = (discriminant + math1) / math2;
+      System.out.print("Result: " + result);
+      
+      // Decimal format
+      DecimalFormat fmt1 = new DecimalFormat("#,##0.0###");
+      String resultStr = Double.toString(result);
+      int lengthld = resultStr.indexOf(".");
+      int lengthrd = resultStr.length() - 1 - lengthld;
+      
+      System.out.print("\n# of characters to left of decimal point: "
+         + lengthld);
+      System.out.print("\n# of characters to right of decimal point: "
+         + lengthrd);
+      System.out.print("\nFormatted Result: " + fmt1.format(result));  
+   }
+}
